@@ -26,8 +26,7 @@ def home(request):
         return render(request, 'home.html', {'records': recorda})
 
 
-# def user_login(request):
-#     pass
+
 
 def user_logout(request):
     logout(request)
