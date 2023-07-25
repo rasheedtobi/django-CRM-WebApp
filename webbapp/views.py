@@ -26,8 +26,6 @@ def home(request):
         return render(request, 'home.html', {'records': recorda})
 
 
-
-
 def user_logout(request):
     logout(request)
     # messages.success('You have been logged out')
@@ -95,7 +93,7 @@ def add_new_record(request):
 
 def update_record(request, pk):
     if request.user.is_authenticated:
-        # Chech record
+        # Get record
         upd_record = Record.objects.get(id=pk)
         form = AddRecordForm(request.POST or None, instance=upd_record)
         if form.is_valid():
